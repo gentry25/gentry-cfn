@@ -1,0 +1,51 @@
+Transform: AWS::Serverless-2016-10-31
+Resources:
+ ScottLambda:
+  Type: AWS::Serverless::Function
+  Properties:
+   FunctionName: ScottSAM
+   Runtime: python3.7 
+   CodeUri: s3://gentry-inspector/ScottSAM.zip
+   Handler: ScottSAM.lambda_handler
+   Role: arn:aws:iam::713121937993:role/scottslambdarole
+   Policies:
+     - CloudWatchPutMetricPolicy: {}
+     - S3WritePolicy:
+        BucketName: !Ref SrcBucket
+        
+     - Statement:
+        - Sid: ReadSecurityHubMembers
+          Effect: Allow
+          Action:
+           - securityhub:GetMembers,ListMembers
+          Resource: '*'
+     - Statement:
+        - Sid: S3Bucketwrite
+          Effect: Allow
+          Action:
+           - s3:PutObject
+          Resource: !GetAtt  SrcBucket.Arn
+     - Statement:
+        - Sid: WritetoCloudWatch
+          Effect: Allow
+          Action:
+             - logs:createLogStream,CreateLogGroup,PutLogEvents
+          Resource: '*'  
+      
+   Events:
+     CWSchedule:
+        Type: Schedule
+        Properties:
+          Schedule: 'rate(5 minutes)'
+   Tags:  
+    
+       Key: CostCenter
+       Value: 2147
+      
+       Key: Lifecycle
+       Value: Devl
+ SrcBucket:
+  Type: AWS::S3::Bucket
+  Properties:
+     BucketName: gentry-druid
+   
