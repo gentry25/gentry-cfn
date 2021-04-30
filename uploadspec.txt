@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "pattern": "*.gz",
+      "target": "reptilians/",
+      "props": "type=zip;status=ready"
+    }
+  ]
+}
