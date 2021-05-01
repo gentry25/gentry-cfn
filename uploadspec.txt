@@ -3,7 +3,7 @@
     {
       "pattern": "*.gz",
       "target": "reptilians/",
-      "props": "type=zip;status=ready"
+      "props": "type=zip;status=ready",
       "explode" : "true"
     }
   ]
