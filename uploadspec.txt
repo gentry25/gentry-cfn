@@ -3,6 +3,7 @@
     {
       "pattern": "*.tar",
       "target": "reptilians/",
+      "props" : "type=tgz;status=ready",
       "explode" : "true"
     }
   ]
