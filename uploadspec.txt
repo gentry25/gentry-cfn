@@ -1,9 +1,8 @@
-{
+
   "files": [
     {
       "pattern": "*.tar.gz",
       "target": "me/latest",
-      "props" : "type=gz;status=ready",
       "explode" : "true"
     }
   ]
