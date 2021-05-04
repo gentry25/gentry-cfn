@@ -2,7 +2,7 @@
   "files": [
     {
       "pattern": "*.tar.gz",
-      "target": "reptilians/debian/",
+      "target": "reptilians/debian/latest"
       "props" : "type=tgz;status=ready",
       "explode" : "true"
     }
