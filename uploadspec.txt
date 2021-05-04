@@ -2,7 +2,7 @@
   "files": [
     {
       "pattern": "*.tar.gz",
-      "target": "me/latest",
+      "target": "me/latest/",
       "explode" : "true"
     }
   ]
