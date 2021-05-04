@@ -3,7 +3,7 @@
     {
       "pattern": "*.tar.gz",
       "target": "reptilians/gentry/latest",
-      "props" : "type=tgz;status=ready",
+      "props" : "type=gz;status=ready",
       "explode" : "true"
     }
   ]
