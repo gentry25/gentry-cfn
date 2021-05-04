@@ -2,7 +2,7 @@
   "files": [
     {
       "pattern": "*.tar.gz",
-      "target": "reptilians/gentry/latest",
+      "target": "me/latest",
       "props" : "type=gz;status=ready",
       "explode" : "true"
     }
