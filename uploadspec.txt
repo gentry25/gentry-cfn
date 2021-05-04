@@ -1,0 +1,10 @@
+{
+  "files": [
+    {
+      "pattern": "*.tar.gz",
+      "target": "reptilians/",
+      "props" : "type=tgz;status=ready",
+      "explode" : "true"
+    }
+  ]
+}
